@@ -1,0 +1,241 @@
+from tkinter import *
+root=Tk()
+i = 0
+n = 0
+def clear():
+    tex.delete(0, END)
+def clear1():
+    tex1.delete(0, END)
+def operation():
+    clear1()
+    w = tex.get()
+    w2 = tex2.get()
+    w3 = tex3.get()
+    if w2 == 'km':
+        if w3=='m':
+            tex1.insert(0, (int(w)*1000))
+        if w3=='sm':
+            tex1.insert(0, (int(w)*100000))
+        if w3=='mm':
+            tex1.insert(0, (int(w)*1000000))
+    if w2 == 'm':
+        if w3=='km':
+            tex1.insert(0, (int(w)/1000))
+        if w3=='sm':
+            tex1.insert(0, (int(w)*100))
+        if w3=='mm':
+            tex1.insert(0, (int(w)*1000))
+    if w2 == 'sm':
+        if w3=='km':
+            tex1.insert(0, (int(w)/100000))
+        if w3=='m':
+            tex1.insert(0, (int(w)/100))
+        if w3=='mm':
+            tex1.insert(0, (int(w)*10))
+    if w2 == 'mm':
+        if w3=='km':
+            tex1.insert(0, (int(w)/1000000))
+        if w3=='m':
+            tex1.insert(0, (int(w)/1000))
+        if w3=='sm':
+            tex1.insert(0, (int(w)/10))
+    if w2 == 'kg':
+        if w3=='g':
+            tex1.insert(0, (int(w)*1000))
+    if w2 == 'g':
+        if w3=='kg':
+            tex1.insert(0, (int(w)/1000))
+    if w2 == 'L':
+        if w3=='mL':
+            tex1.insert(0, (int(w)*1000))
+        if w3=='sm^3':
+            tex1.insert(0, (int(w)*1000))
+        if w3=='m^3':
+            tex1.insert(0, (int(w)/1000))
+    if w2 == 'mL':
+        if w3=='L':
+            tex1.insert(0, (int(w)/1000))
+        if w3=='sm^3':
+            tex1.insert(0, int(w))
+        if w3=='m^3':
+            tex1.insert(0, (int(w)/1000000))
+    if w2 == 'sm^3':
+        if w3=='L':
+            tex1.insert(0, (int(w)/1000))
+        if w3=='mL':
+            tex1.insert(0, int(w))
+        if w3=='m^3':
+            tex1.insert(0, (int(w)/1000000))
+    if w2 == 'm^3':
+        if w3=='L':
+            tex1.insert(0, (int(w)*1000))
+        if w3=='mL':
+            tex1.insert(0, int(w)*1000000)
+        if w3=='sm^3':
+            tex1.insert(0, (int(w)*1000000))
+    if w2 == 'm^2':
+        if w3=='sm^2':
+            tex1.insert(0, (int(w)*10000))
+    if w2 == 'sm^2':
+        if w3=='m^2':
+            tex1.insert(0, (int(w)/10000))
+def clear2():
+    tex2.delete(0, END)
+def km():
+    clear2()
+    clear()
+    tex2.insert(0, 'km')
+def m():
+    clear2()
+    clear()
+    tex2.insert(0, 'm')
+def sm():
+    clear2()
+    clear()
+    tex2.insert(0, 'sm')
+def mm():
+    clear2()
+    clear()
+    tex2.insert(0, 'mm')
+def kg():
+    clear2()
+    clear()
+    tex2.insert(0, 'kg')
+def L():
+    clear2()
+    clear()
+    tex2.insert(0, 'L')
+def mL():
+    clear2()
+    clear()
+    tex2.insert(0, 'mL')
+def m_2():
+    clear2()
+    clear()
+    tex2.insert(0, 'm^2')
+def sm_2():
+    clear2()
+    clear()
+    tex2.insert(0, 'sm^2')
+def m_3():
+    clear2()
+    clear()
+    tex2.insert(0, 'm^3')
+def sm_3():
+    clear2()
+    clear()
+    tex2.insert(0, 'sm^3')
+def clear3():
+    tex3.delete(0, END)
+def km1():
+    clear3()
+    clear1()
+    tex3.insert(0, 'km')
+def m1():
+    clear3()
+    clear1()
+    tex3.insert(0, 'm')
+def sm1():
+    clear3()
+    clear1()
+    tex3.insert(0, 'sm')
+def mm1():
+    clear3()
+    clear1()
+    tex3.insert(0, 'mm')
+def kg1():
+    clear3()
+    clear1()
+    tex3.insert(0, 'kg')
+def L1():
+    clear3()
+    clear1()
+    tex3.insert(0, 'L')
+def mL1():
+    clear3()
+    clear1()
+    tex3.insert(0, 'mL')
+def m_21():
+    clear3()
+    clear1()
+    tex3.insert(0, 'm^2')
+def sm_21():
+    clear3()
+    clear1()
+    tex3.insert(0, 'sm^2')
+def m_31():
+    clear3()
+    clear1()
+    tex3.insert(0, 'm^3')
+def sm_31():
+    clear3()
+    clear1()
+    tex3.insert(0, 'sm^3')
+def g():
+    clear2()
+    clear()
+    tex2.insert(0, 'g')
+def g1():
+    clear3()
+    clear1()
+    tex3.insert(0, 'g')
+tex = Entry(root, font = 'Arial 12')
+tex1 = Entry(root, font = 'Arial 12')
+tex2 = Entry(root, font = 'Arial 12')
+tex3 = Entry(root, font = 'Arial 12')
+tex.place(x=55, y=0)
+tex1.place(x=55, y=70)
+tex2.place(x=55, y=20)
+tex3.place(x=55, y=90)
+var=IntVar()
+var1=IntVar()
+rbutton1=Radiobutton(root,text='km',variable=var,value=1, command = km)
+rbutton2=Radiobutton(root,text='m',variable=var,value=2, command = m)
+rbutton3=Radiobutton(root,text='sm',variable=var,value=3, command = sm)
+rbutton4=Radiobutton(root,text='mm',variable=var,value=4, command = mm)
+rbutton5=Radiobutton(root,text='kg',variable=var,value=5, command = kg)
+rbutton6=Radiobutton(root,text='L',variable=var,value=6, command = L)
+rbutton7=Radiobutton(root,text='mL',variable=var,value=7, command = mL)
+rbutton8=Radiobutton(root,text='m^2',variable=var,value=8, command = m_2)
+rbutton9=Radiobutton(root,text='sm^2',variable=var,value=9, command = sm_2)
+rbutton10=Radiobutton(root,text='m^3',variable=var,value=11, command = m_3)
+rbutton11=Radiobutton(root,text='sm^3',variable=var,value=12, command = sm_3)
+rbutton100=Radiobutton(root,text='km',variable=var1,value=1, command = km1)
+rbutton20=Radiobutton(root,text='m',variable=var1,value=2, command = m1)
+rbutton30=Radiobutton(root,text='sm',variable=var1,value=3, command = sm1)
+rbutton40=Radiobutton(root,text='mm',variable=var1,value=4, command = mm1)
+rbutton50=Radiobutton(root,text='kg',variable=var1,value=5, command = kg1)
+rbutton60=Radiobutton(root,text='L',variable=var1,value=6, command = L1)
+rbutton70=Radiobutton(root,text='mL',variable=var1,value=7, command = mL1)
+rbutton80=Radiobutton(root,text='m^2',variable=var1,value=8, command = m_21)
+rbutton90=Radiobutton(root,text='sm^2',variable=var1,value=9, command = sm_21)
+rbutton1000=Radiobutton(root,text='m^3',variable=var1,value=11, command = m_31)
+rbutton110=Radiobutton(root,text='sm^3',variable=var1,value=12, command = sm_31)
+rbutton12=Radiobutton(root,text='g',variable=var,value=14, command = g)
+rbutton120=Radiobutton(root,text='g',variable=var1,value=14, command = g1)
+Button = Button(root, text = "do it!", font='Arial 12', command = operation)
+Button.place(x=120, y = 40)
+rbutton1.place(x=0, y=0)
+rbutton2.place(x=0, y=20)
+rbutton3.place(x=0, y=40)
+rbutton4.place(x=0, y=60)
+rbutton5.place(x=0, y=80)
+rbutton6.place(x=0, y=100)
+rbutton7.place(x=0, y=120)
+rbutton8.place(x=0, y=140)
+rbutton9.place(x=0, y=160)
+rbutton10.place(x=0, y=180)
+rbutton11.place(x=0, y=200)
+rbutton12.place(x=0, y=220)
+rbutton100.place(x=250, y=0)
+rbutton20.place(x=250, y=20)
+rbutton30.place(x=250, y=40)
+rbutton40.place(x=250, y=60)
+rbutton50.place(x=250, y=80)
+rbutton60.place(x=250, y=100)
+rbutton70.place(x=250, y=120)
+rbutton80.place(x=250, y=140)
+rbutton90.place(x=250, y=160)
+rbutton1000.place(x=250, y=180)
+rbutton110.place(x=250, y=200)
+rbutton120.place(x=250, y=220)
