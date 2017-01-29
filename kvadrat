@@ -42,21 +42,24 @@ def op():
                 text9.insert(0, 'error')
                 break
         else:
-            d = (((int(b))**2)-(4*(int(a))*(int(c))))
-            if d<0:
-                text9.insert(0, 'D < 0')
+            if a == '0':
+                text9.insert(0, 'error')
             else:
-                text9.delete(0, END)
-                text4.insert(0, d)
-                text5.insert(0, ((int(b)*(-1))-((d)**0.5))/(2*int(a)))
-                text6.insert(0, ((int(b)*(-1))+((d)**0.5))/(2*int(a)))
-                text7.insert(0, int(b)/int(a))
-                text8.insert(0, int(c)/int(a))
-                w = text5.get()
-                w1 = text6.get()
-                w2 = text4.get()
-                if w == w1:
-                    text9.insert(0, 'x1 = x2 = '+w)
+                d = (((int(b))**2)-(4*(int(a))*(int(c))))
+                if d<0:
+                    text9.insert(0, 'D < 0')
+                else:
+                    text9.delete(0, END)
+                    text4.insert(0, d)
+                    text5.insert(0, ((int(b)*(-1))-((d)**0.5))/(2*int(a)))
+                    text6.insert(0, ((int(b)*(-1))+((d)**0.5))/(2*int(a)))
+                    text7.insert(0, int(b)/int(a))
+                    text8.insert(0, int(c)/int(a))
+                    w = text5.get()
+                    w1 = text6.get()
+                    w2 = text4.get()
+                    if w == w1:
+                        text9.insert(0, 'x1 = x2 = '+w)
     
 root.geometry("420x280")
 label1=Label(root,width=15,height=1,text='ax^2 + bx + c = 0',font='arial 14')
@@ -100,4 +103,3 @@ Button2.place(x=170, y = 190)
 text9=Entry(root, font = 'Arial 14')
 text9.place(x=90, y = 235)
 root.mainloop()
-
