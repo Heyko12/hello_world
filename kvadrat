@@ -1,15 +1,103 @@
 from tkinter import *
 root=Tk()
-i = 0
-n = 0
-root.geometry("300x300")
+def clear():
+    text1.delete(0, END)
+    text2.delete(0, END)
+    text3.delete(0, END)
+    text4.delete(0, END)
+    text5.delete(0, END)
+    text6.delete(0, END)
+    text7.delete(0, END)
+    text8.delete(0, END)
+    text9.delete(0, END)
+def clear1():
+    text4.delete(0, END)
+    text5.delete(0, END)
+    text6.delete(0, END)
+    text7.delete(0, END)
+    text8.delete(0, END)
+    text9.delete(0, END)
+def op():
+    clear1()
+    a = text1.get()
+    b = text2.get()
+    c = text3.get()
+    n = 0
+    if a == "" or b == "" or c == "":
+        text9.insert(0, 'error')
+    else:
+        for i in range(0, len(a)):
+            if a[i]!='1' and a[i]!='0' and a[i]!='3' and a[i]!='2' and a[i]!='4' and a[i]!='5' and a[i]!='6' and a[i]!='7' and a[i]!='8' and a[i]!='9' and a[i]!='-' and a[i]!='+':
+                text9.delete(0, END)
+                text9.insert(0, 'error')
+                break
+        for i in range(len(b)):
+            if b[i]!='1' and b[i]!='0' and b[i]!='3' and b[i]!='2' and b[i]!='4' and b[i]!='5' and b[i]!='6' and b[i]!='7' and b[i]!='8' and b[i]!='9' and b[i]!='-' and b!=[i]!='+':
+                text9.delete(0, END)
+                text9.insert(0, 'error')
+                break
+        for i in range(len(c)):
+            if c[i]!='1' and c[i]!='0' and c[i]!='3' and c[i]!='2' and c[i]!='4' and c[i]!='5' and c[i]!='6' and c[i]!='7' and c[i]!='8' and c[i]!='9' and c[i]!='-' and c[i]!='+':
+                text9.delete(0, END)
+                text9.insert(0, 'error')
+                break
+        else:
+            d = (((int(b))**2)-(4*(int(a))*(int(c))))
+            if d<0:
+                text9.insert(0, 'D < 0')
+            else:
+                text9.delete(0, END)
+                text4.insert(0, d)
+                text5.insert(0, ((int(b)*(-1))-((d)**0.5))/(2*int(a)))
+                text6.insert(0, ((int(b)*(-1))+((d)**0.5))/(2*int(a)))
+                text7.insert(0, int(b)/int(a))
+                text8.insert(0, int(c)/int(a))
+                w = text5.get()
+                w1 = text6.get()
+                w2 = text4.get()
+                if w == w1:
+                    text9.insert(0, 'x1 = x2 = '+w)
+    
+root.geometry("420x280")
 label1=Label(root,width=15,height=1,text='ax^2 + bx + c = 0',font='arial 14')
-label1.place(x=65, y = 0)
+label1.place(x=115, y = 0)
 label2=Label(root,width=5,height=1,text='a =',font='arial 14')
 label2.place(x=0, y = 30)
 label3=Label(root,width=5,height=1,text='b =',font='arial 14')
 label3.place(x=0, y = 60)
 label4=Label(root,width=5,height=1,text='c =',font='arial 14')
 label4.place(x=0, y = 90)
-text1=Text(root,height=1,width=5,font='Arial 14',wrap=WORD)
+text1=Entry(root, font = 'Arial 14')
 text1.place(x=50, y = 30)
+text2=Entry(root, font = 'Arial 14')
+text2.place(x=50, y = 60)
+text3=Entry(root, font = 'Arial 14')
+text3.place(x=50, y = 90)
+label5=Label(root,width=5,height=1,text='D =',font='arial 14')
+label5.place(x=120, y = 30)
+text4=Entry(root, font = 'Arial 14')
+text4.place(x=170, y = 30)
+label6=Label(root,width=5,height=1,text='x1 =',font='arial 14')
+label6.place(x=120, y = 60)
+text5=Entry(root, font = 'Arial 14')
+text5.place(x=170, y = 60)
+label7=Label(root,width=5,height=1,text='x2 =',font='arial 14')
+label7.place(x=120, y = 90)
+text6=Entry(root, font = 'Arial 14')
+text6.place(x=170, y = 90)
+label8=Label(root,width=5,height=1,text='b/a =',font='arial 14')
+label8.place(x=8, y = 120)
+text7=Entry(root, font = 'Arial 14')
+text7.place(x=65, y = 120)
+label9=Label(root,width=5,height=1,text='c/a =',font='arial 14')
+label9.place(x=8, y = 150)
+text8=Entry(root, font = 'Arial 14')
+text8.place(x=65, y = 150)
+Button1 = Button(root, text = "clear", command = clear, font='Arial 14')
+Button1.place(x=320, y = 130)
+Button2 = Button(root, text = "Do it!", command = op, font='Arial 14')
+Button2.place(x=170, y = 190)
+text9=Entry(root, font = 'Arial 14')
+text9.place(x=90, y = 235)
+root.mainloop()
+
