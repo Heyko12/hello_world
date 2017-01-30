@@ -27,17 +27,17 @@ def op():
         text9.insert(0, 'error')
     else:
         for i in range(0, len(a)):
-            if a[i]!='1' and a[i]!='0' and a[i]!='3' and a[i]!='2' and a[i]!='4' and a[i]!='5' and a[i]!='6' and a[i]!='7' and a[i]!='8' and a[i]!='9' and a[i]!='-' and a[i]!='+':
+            if a[i]!='1' and a[i]!='0' and a[i]!='3' and a[i]!='2' and a[i]!='4' and a[i]!='5' and a[i]!='6' and a[i]!='7' and a[i]!='8' and a[i]!='9' and a[i]!='-' and a[i]!='+' and a[i]!='.':
                 text9.delete(0, END)
                 text9.insert(0, 'error')
                 break
         for i in range(len(b)):
-            if b[i]!='1' and b[i]!='0' and b[i]!='3' and b[i]!='2' and b[i]!='4' and b[i]!='5' and b[i]!='6' and b[i]!='7' and b[i]!='8' and b[i]!='9' and b[i]!='-' and b!=[i]!='+':
+            if b[i]!='1' and b[i]!='0' and b[i]!='3' and b[i]!='2' and b[i]!='4' and b[i]!='5' and b[i]!='6' and b[i]!='7' and b[i]!='8' and b[i]!='9' and b[i]!='-' and b!=[i]!='+' and b[i]!='.':
                 text9.delete(0, END)
                 text9.insert(0, 'error')
                 break
         for i in range(len(c)):
-            if c[i]!='1' and c[i]!='0' and c[i]!='3' and c[i]!='2' and c[i]!='4' and c[i]!='5' and c[i]!='6' and c[i]!='7' and c[i]!='8' and c[i]!='9' and c[i]!='-' and c[i]!='+':
+            if c[i]!='1' and c[i]!='0' and c[i]!='3' and c[i]!='2' and c[i]!='4' and c[i]!='5' and c[i]!='6' and c[i]!='7' and c[i]!='8' and c[i]!='9' and c[i]!='-' and c[i]!='+' and c[i]!='.':
                 text9.delete(0, END)
                 text9.insert(0, 'error')
                 break
@@ -45,16 +45,16 @@ def op():
             if a == '0':
                 text9.insert(0, 'error')
             else:
-                d = (((int(b))**2)-(4*(int(a))*(int(c))))
+                d = (((float(b))**2)-(4*(float(a))*(float(c))))
                 if d<0:
                     text9.insert(0, 'D < 0')
                 else:
                     text9.delete(0, END)
                     text4.insert(0, d)
-                    text5.insert(0, ((int(b)*(-1))-((d)**0.5))/(2*int(a)))
-                    text6.insert(0, ((int(b)*(-1))+((d)**0.5))/(2*int(a)))
-                    text7.insert(0, int(b)/int(a))
-                    text8.insert(0, int(c)/int(a))
+                    text5.insert(0, ((float(b)*(-1))-((d)**0.5))/(2*float(a)))
+                    text6.insert(0, ((float(b)*(-1))+((d)**0.5))/(2*float(a)))
+                    text7.insert(0, float(b)/float(a))
+                    text8.insert(0, float(c)/float(a))
                     w = text5.get()
                     w1 = text6.get()
                     w2 = text4.get()
