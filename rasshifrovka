@@ -1,0 +1,26 @@
+with open('newtext.txt',encoding='utf8') as bbb:
+    ne = bbb.read()
+po = []
+ik = 0
+for el in ne:
+    if el not in po:
+        po.append(el)
+kol = []
+for elem in po:
+    numb = ne.count(elem)
+    kol.append(numb)
+for i in range(1,len(po)):
+    while i > 0 and kol[i - 1] < kol[i]:
+        kol[i-1],kol[i]=kol[i],kol[i-1]
+        po[i-1], po[i]=po[i],po[i-1]
+        i -= 1
+a = ord(po[0])
+b = ord(' ')
+
+poo = []
+for i in range(len(po)):
+        poo.append(chr(ord(po[i])-a+b))
+for i in range(len(ne)):
+    for j in range(len(po)):
+        if ne[i] == po[j]:
+            print(poo[j], end = '')
