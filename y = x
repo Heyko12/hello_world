@@ -3,8 +3,8 @@ x = [i for i in range (-12, 12)]
 y = [j for j in range (-4, 4)]
 a = [n for n in range (-12, -4)]
 b = [k for k in range (4, 12)]
-c = [-4, -3, -2, -1, -(0.3)]
-d = [-4, -3, -2, -1, 0, 0.2]
+c = [m for m in range (-4, 0)]
+d = [h for d in range (-4, 0)]
 y1 = []
 y2 = []
 y3 = []
@@ -12,17 +12,17 @@ y4 = []
 y5 = []
 y6 = []
 for i in x:
-    y1.append((((i*i)/18)*(-1))+12)
+    y1.append(((i*i)/-18)+12)
 for j in y:
-    y2.append((((i*i)/8)*(-1))+6)
+    y2.append(((i*i)/-8)+6)
 for n in a:
-    y3.append(((((i+8)*(i+8))/8)*(-1))+6)
+    y3.append((((i+8)*(i+8))/-8)+6)
 for k in b:
-    y4.append(((((i-8)*(i-8))/8)*(-1))+6)
+    y4.append((((i-8)*(i-8))/-8)+6)
 for m in c:
-    y5.append(((((i+3)*(i+3))*2))-9)
+    y5.append((((i+3)*(i+3))*2)-9)
 for h in d:
-    y6.append(((((i+3)*(i+3))*1.5))-10)
+    y6.append((((i+3)*(i+3))*1.5)-10)
 plt.plot(x, y1)
 plt.plot(y, y2)
 plt.plot(a, y3)
