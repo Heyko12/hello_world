@@ -1,0 +1,145 @@
+with open('pushkin.txt') as rrr:
+    lu = rrr.read()
+m = ['я', 'ю', 'э', 'ь', 'ы', 'ъ', 'щ', 'ш', 'ч', 'ц', 'х', 'ф', 'у', 'т', 'с', 'р', 'п', 'о', 'н', 'м', 'л', 'к', 'й', 'и', 'з', 'ж', 'е', 'д', 'г', 'в', 'б', 'а', '}', '{', 'z', 'y', 'v', 'u', 't', 's', 'r', 'p', 'o', 'n', 'm', 'l', 'i', 'g', 'f', 'e', 'd', 'c', 'b', 'x', 'h', 'a', '?', ';', ':', '9', '7', '6', '5', '4', '3', '2', '1', '.', '-', ',', '*', ')', '(', "'", '"', '!', ' ']
+nm = []
+for element in m:
+    numb = lu.count(element)
+    nm.append(numb)
+for i in range(1,len(nm)):
+    while i > 0 and nm[i - 1] < nm[i]:
+        nm[i-1],nm[i]=nm[i],nm[i-1]
+        m[i-1],m[i]=m[i],m[i-1]
+        i -= 1
+for i in range(len(m)):
+    for j in range(len(m)):
+        if m[i] == 'а' and m[j] == 'е':
+            m[i], m[j] = m[j], m[i]
+for i in range(len(m)):
+    for j in range(len(m)):
+        if m[i] == 'п' and m[j] == ',':
+            m[i], m[j] = m[j], m[i]
+for i in range(len(m)):
+    for j in range(len(m)):
+        if m[i] == 'д' and m[j] == 'у':
+            m[i], m[j] = m[j], m[i]
+for i in range(len(m)):
+    for j in range(len(m)):
+        if m[i] == 'ф' and m[j] == '-':
+            m[i], m[j] = m[j], m[i]
+for i in range(len(m)):
+    for j in range(len(m)):
+        if m[i] == 'л' and m[j] == 'т':
+            m[i], m[j] = m[j], m[i]
+for i in range(len(m)):
+    if m[i] == '"':
+        m[i] = '\n'
+for i in range(len(m)):
+    for j in range(len(m)):
+        if m[i] == 'й' and m[j] == '.':
+            m[i], m[j] = m[j], m[i]
+for i in range(len(m)):
+    for j in range(len(m)):
+        if m[i] == 'г' and m[j] == 'з':
+            m[i], m[j] = m[j], m[i]
+for i in range(len(m)):
+    for j in range(len(m)):
+        if m[i] == 'ч' and m[j] == 'й':
+            m[i], m[j] = m[j], m[i]
+for i in range(len(m)):
+    for j in range(len(m)):
+        if m[i] == '1' and m[j] == 'c':
+            m[i], m[j] = m[j], m[i]
+for i in range(len(m)):
+    for j in range(len(m)):
+        if m[i] == '7' and m[j] == 'b':
+            m[i], m[j] = m[j], m[i]
+for i in range(len(m)):
+    for j in range(len(m)):
+        if m[i] == '9' and m[j] == 'z':
+            m[i], m[j] = m[j], m[i]
+for i in range(len(m)):
+    for j in range(len(m)):
+        if m[i] == 'ф' and m[j] == 'ъ':
+            m[i], m[j] = m[j], m[i]
+for i in range(len(m)):
+    for j in range(len(m)):
+        if m[i] == 's' and m[j] == 'ъ':
+            m[i], m[j] = m[j], m[i]
+for i in range(len(m)):
+    if m[i] == ';':
+        m[i] = '«'
+for i in range(len(m)):
+    if m[i] == '?':
+        m[i] = '»'
+for i in range(len(m)):
+    if m[i] == 'i':
+        m[i] = ''
+for i in range(len(m)):
+    for j in range(len(m)):
+        if m[i] == 's' and m[j] == 'ф':
+            m[i], m[j] = m[j], m[i]
+for i in range(len(m)):
+    for j in range(len(m)):
+        if m[i] == 'a' and m[j] == 'э':
+            m[i], m[j] = m[j], m[i]
+for i in range(len(m)):
+    for j in range(len(m)):
+        if m[i] == '*' and m[j] == 'b':
+            m[i], m[j] = m[j], m[i]
+for i in range(len(m)):
+    if m[i] == 's':
+        m[i] = '—'
+for i in range(len(m)):
+    for j in range(len(m)):
+        if m[i] == 'n' and m[j] == 't':
+            m[i], m[j] = m[j], m[i]
+for i in range(len(m)):
+    for j in range(len(m)):
+        if m[i] == 'm' and m[j] == 'o':
+            m[i], m[j] = m[j], m[i]
+for i in range(len(m)):
+    for j in range(len(m)):
+        if m[i] == 'm' and m[j] == 'a':
+            m[i], m[j] = m[j], m[i]
+for i in range(len(m)):
+    for j in range(len(m)):
+        if m[i] == ')' and m[j] == 'm':
+            m[i], m[j] = m[j], m[i]
+for i in range(len(m)):
+    for j in range(len(m)):
+        if m[i] == '(' and m[j] == 'e':
+            m[i], m[j] = m[j], m[i]
+for i in range(len(m)):
+    for j in range(len(m)):
+        if m[i] == '{' and m[j] == '(':
+            m[i], m[j] = m[j], m[i]
+for i in range(len(m)):
+    for j in range(len(m)):
+        if m[i] == 'u' and m[j] == ')':
+            m[i], m[j] = m[j], m[i]
+for i in range(len(m)):
+    if m[i] == 'u':
+        m[i] = '?'
+for i in range(len(m)):
+    if m[i] == '!':
+        m[i] = ';'
+with open('newtext.txt',encoding='utf8') as bbb:
+    ne = bbb.read()
+po = []
+ik = 0
+for el in ne:
+    if el not in po:
+        po.append(el)
+kol = []
+for elem in po:
+    numb = ne.count(elem)
+    kol.append(numb)
+for i in range(1,len(po)):
+    while i > 0 and kol[i - 1] < kol[i]:
+        kol[i-1],kol[i]=kol[i],kol[i-1]
+        po[i-1], po[i]=po[i],po[i-1]
+        i -= 1
+for i in range(len(ne)):
+    for j in range(len(po)):
+        if ne[i] == po[j]:
+            print(m[j], end = '')
